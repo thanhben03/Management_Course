@@ -40,7 +40,7 @@ public class Member {
         System.out.println("Enter new course name (Empty to skip): ");
         String courseName = scanner.nextLine();
         if (!courseName.trim().isEmpty()) {
-            setCourseName(name);
+            setCourseName(courseName);
         }
 
         // Set new age

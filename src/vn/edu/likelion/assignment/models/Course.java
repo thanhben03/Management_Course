@@ -4,6 +4,7 @@ import vn.edu.likelion.assignment.interfaces.IManage;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -35,7 +36,10 @@ public class Course implements IManage {
             String name = sc.nextLine();
 
             System.out.print("Enter age member: ");
-            int age = sc.nextInt();
+            int age = getUserChoice();
+            while (age < 0) {
+               age = getUserChoice();
+            }
             sc.nextLine();
             String nameCourse = getNameCourse();
             Member newMember = new Member(memberId++, name, age, nameCourse);
@@ -60,6 +64,17 @@ public class Course implements IManage {
             m.setCourseName(courseName);
         }
         System.out.println("Edit success !");
+    }
+
+    private static int getUserChoice() {
+        int choice = -1;
+        try {
+            choice = sc.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Khong hop le ! Vui long chon lai.");
+            sc.nextLine(); // Clear the invalid input
+        }
+        return choice;
     }
 
 
