@@ -115,8 +115,14 @@ public class ManageCourse implements IManage {
     private ArrayList<Course> getSortedCourses() {
         //object initialization sorted from courses
         ArrayList<Course> sortedCourses = new ArrayList<>(courses);
-
-        sortedCourses.sort((course1, course2) -> course1.getNameCourse().compareTo(course2.getNameCourse()));
+        Course temp;
+        for (int i = 0; i < sortedCourses.size() - 1; i++) {
+            for (int j = i + 1; j < sortedCourses.size(); j++) {
+                temp = sortedCourses.get(i);
+                sortedCourses.set(i, sortedCourses.get(j));
+                sortedCourses.set(j, temp);
+            }
+        }
         return sortedCourses;
     }
 
