@@ -12,6 +12,7 @@ public class Main {
     public static void main(String[] args) {
         boolean running = true;
 
+        System.out.println();
         while (running) {
             displayMainMenu();
             int choice = getUserChoice();

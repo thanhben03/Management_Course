@@ -2,10 +2,8 @@ package vn.edu.likelion.assignment.models;
 
 import vn.edu.likelion.assignment.interfaces.IManage;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class Course implements IManage {
@@ -102,10 +100,10 @@ public class Course implements IManage {
 
     public void detailMemebersCurrent () throws IllegalArgumentException {
         System.out.println("---------" + getNameCourse() + "--------");
-        System.out.print("Cac thanh vien trong khoa hoc: ");
+        System.out.print("Cac thanh vien trong khoa hoc: \n");
 
         if (getSize() == 0) {
-            throw new IllegalArgumentException("(No member)");
+            System.out.println("(No member)");
         } else {
             System.out.println();
         }

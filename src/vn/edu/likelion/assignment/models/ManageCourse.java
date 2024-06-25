@@ -101,9 +101,9 @@ public class ManageCourse implements IManage {
     }
 
     public void showAllMembers() {
-        if (isEmptyMemberList()) {
-            throw new IllegalArgumentException("Không có thành viên nào");
-        }
+//        if (isEmptyMemberList()) {
+//            throw new IllegalArgumentException("Không có thành viên nào");
+//        }
 
         // get sorted courses
         ArrayList<Course> sortedCourses = getSortedCourses();
